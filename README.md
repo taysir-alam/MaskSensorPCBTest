@@ -2,20 +2,25 @@
 
 This project implements a **BLE peripheral** on the ESP32 that measures **temperature and humidity** from an SHT40 sensor, optionally reads a thermistor via the ADC, and publishes the readings over Bluetooth Low Energy. 2 compact PCB's were designed to accomodate specific use cases for integration in a sensor-enabled mask.
 
+![Image](https://github.com/user-attachments/assets/0b3ffe91-9e69-4ff2-a2fb-dfecb249b430)
+
+![Image](https://github.com/user-attachments/assets/627ac4bd-844b-4ed4-82b9-d7dce46be29b)
+
+![Image](https://github.com/user-attachments/assets/af4b6160-2fd7-4741-b419-8729478cb086)
+
+![Image](https://github.com/user-attachments/assets/d3f3787d-2d80-4c20-a191-4d5a04f1b978)
+
 It also supports **remote commands** to enable or disable the sensor via a write-only BLE characteristic.
 
 ## Supported Targets
 
 | Supported Targets | ESP32 | ESP32-S2 | ESP32-S3 |
 | ----------------- | ----- | -------- | -------- |
-| Status            | ✅    | ✅*      | ✅*      |
+| Status            | Support Available    | Support Available*      | Support Available*      |
 
 > \*Requires compatible I²C and ADC pins — verify pin mapping for your board.
-
 ---
-
 ## Features
-
 - Reads temperature and humidity from an **SHT40** over I²C.
 - Optional thermistor measurement on ADC pin 34.
 - Publishes `"temperature:humidity"` (ASCII) via a BLE notify characteristic.
@@ -25,9 +30,7 @@ It also supports **remote commands** to enable or disable the sensor via a write
 - CRC-8 verification on SHT40 data for robust measurements.
 - Automatically restarts advertising when a BLE client disconnects.
 - LED indicator on IO25 lights when temperature exceeds a configurable threshold.
-
 ---
-
 ## Hardware Requirements
 
 - ESP32 development board (e.g., DevKitC, WROOM-based board).
@@ -42,26 +45,7 @@ It also supports **remote commands** to enable or disable the sensor via a write
 | I²C SCL       | 22  |
 | Thermistor ADC| 34  |
 | LED output    | 25  |
-
 ---
-
-## How to Build & Upload
-
-### Arduino IDE
-1. Install [Arduino IDE](https://github.com/espressif/arduino-esp32/tree/master/docs/arduino-ide).
-2. Install the **ESP32 Arduino core**.
-3. Select your board: `Tools → Board → ESP32 Dev Module` (or matching model).
-4. Connect your ESP32 via USB and select the correct COM port under `Tools → Port`.
-5. Open the sketch file and click **Upload**.
-
-### PlatformIO
-1. Install [PlatformIO](https://platformio.org/).
-2. Create a new ESP32 project and replace `src/main.cpp` with this code.
-3. Add required libraries: `arduino-esp32`.
-4. Build and upload.
-
----
-
 ## BLE Services & Characteristics
 
 - **Service UUID:** `4fafc201-1fb5-459e-8fcc-c5c9c331914b`
