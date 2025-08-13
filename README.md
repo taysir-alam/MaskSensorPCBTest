@@ -2,10 +2,6 @@
 
 This project implements a **BLE peripheral** on the ESP32 that measures **temperature and humidity** from an SHT40 sensor, optionally reads a thermistor via the ADC, and publishes the readings over Bluetooth Low Energy. 2 compact PCB's were designed to accomodate specific use cases for integration in a sensor-enabled mask.
 
-![Image](https://github.com/user-attachments/assets/0b3ffe91-9e69-4ff2-a2fb-dfecb249b430)
-
-![Image](https://github.com/user-attachments/assets/627ac4bd-844b-4ed4-82b9-d7dce46be29b)
-
 ![Image](https://github.com/user-attachments/assets/af4b6160-2fd7-4741-b419-8729478cb086)
 
 ![Image](https://github.com/user-attachments/assets/d3f3787d-2d80-4c20-a191-4d5a04f1b978)
